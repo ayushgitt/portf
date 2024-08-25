@@ -1,0 +1,49 @@
+.hero-img{
+    width: 100%;
+    height: 90vh;
+    background: rgb(0,0,0,0.5);
+    position: relative;
+}
+.hero-img::before{
+    content: "";
+    background-image: url("https://www.hdwallpapers.in/download/black_laptop_computer_on_brown_wooden_table_4k_5k_hd_cool-3840x2160.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.heading{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-img h1{
+    font-size: 4rem;
+}
+.hero-img p{
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+@media screen and (max-width:640px) {
+
+    .hero-img h1{
+        font-size: 2rem;
+    }
+    .hero-img p{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+   
+    
+}
