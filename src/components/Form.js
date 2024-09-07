@@ -1,23 +1,53 @@
 import "./formstyle.css"
-import React from 'react'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 
 const Form = () => {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_exjkx97', 'template_exrnthf', form.current, {
+        publicKey: '0LF3x6_AzYXIH5q1Q',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          e.target.reset();
+          alert("Email send successfully.");
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          e.target.reset();
+          alert("Email send failed.");
+        },
+      );
+  };
+
+
+
+
   return (
     <div className="form">
-        <form>
-            <label>YOUR NAME</label>
-            <input type="text"></input>
+        
+      <form ref={form} onSubmit={sendEmail}>
+      <label>YOUR Name</label>
+      <input type="text" name="user_name"></input>
 
-            <label>Email</label>
-            <input type="Email"></input>
+      <label>Email</label>
+      <input type="email" name="user_email"></input>
 
-            <label>SUBJECT</label>
-            <input type="text"></input>
+      <label>SUBJECT</label>
+      <input type="text"></input>
 
-            <label>MESSAGE</label>
-            <textarea rows="6" placeholder="Type your message here....."/>
-            <button className="btn">SUBMIT</button>
-        </form>
+      <label>MESSAGE</label>
+      <textarea name="message" placeholder="enter your text here....." rows="6" />
+      <button className="btn" value="send">SUBMIT</button>
+    </form>
     </div>
   )
 }
