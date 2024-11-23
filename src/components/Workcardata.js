@@ -14,8 +14,8 @@ const Projectdata=[
         imgsrc:proj2,
         title:"HEALTH PREDICTION",
         text:"",
-        view:"https://github.com/ayushgitt/diabetes",
-        source:"https://github.com/ayushgitt/diabetes"
+        view:"https://healthproject0002024.streamlit.app/",
+        source:"https://github.com/ayushgitt/portf"
         
     },
     {
