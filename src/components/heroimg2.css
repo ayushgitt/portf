@@ -35,8 +35,61 @@
 }
 
 
-@media screen and (max-width:640px) {
+.masked-text {
+    font-size: 10rem;
+    font-weight: 900;
+    color: transparent;
+    background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+    background-size: 200%;
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 4s infinite alternate linear;
+    font-family: "Alfa Slab One", serif;
+}
 
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&display=swap');
+
+/* Cursor */
+.cursor{
+    position: relative;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+/* Animation */
+.typewriter-animation {
+  animation: 
+    typewriter 9s steps(50) 3s infinite both, 
+    blinkingCursor 500ms steps(30) infinite normal;
+}
+@keyframes typewriter {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+@keyframes blinkingCursor{
+  from { border-right-color: rgba(255, 255, 255, 0.985); }
+  to { border-right-color: transparent; }
+}
+
+@media screen and (max-width:640px) {
     .hero-img h1{
         font-size: 2rem;
     }
@@ -44,6 +97,10 @@
         font-size: 1.2rem;
         text-align: center;
     }
-   
-    
+    .masked-text {
+        font-size: 5rem;
+    }
+    .cursor {
+        font-size: 20px;
+    }
 }
